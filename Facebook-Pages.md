@@ -60,6 +60,9 @@ These optional parameters, `startup_message`, and `startup_list`, are entered at
 | `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
+Check Image column to see where eberything appears in the final publication.
+
+![](images/Facebook.png)  
 
 | Parameters       | Description                                       | Default                                       | Image|
 | -----------------|---------------------------------------------------|-----------------------------------------------|----|
