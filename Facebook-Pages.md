@@ -61,10 +61,17 @@ These optional parameters, `startup_message`, and `startup_list`, are entered at
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 
-| Parameters       | Description                                       | Default                                       |
-| -----------------|---------------------------------------------------|-----------------------------------------------|
-| `message`        | Message to post as status message                 | `A wild <pkmn> has appeared! Available until <24h_time> (<time_left>).`                                      | 
-| `link`           | Link to be added to notification text   		   | `<gmaps>`                                     |
+| Parameters       | Description                                       | Default                                       | Image|
+| -----------------|---------------------------------------------------|-----------------------------------------------|----|
+| `message`        | Message to post as status message                 | `A wild <pkmn> has appeared! Available until <24h_time> (<time_left>).`                                      | 1 |
+| `link`           | Link to be added to notification text   		   | `<gmaps>` | Link |
+| `picture`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png` <br/> `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png` <br/> `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png` | 2 |
+| `name`           | Link title (empty for linked page title)   		   | Empty  | 3 |
+| `description`    | Link description (empty for empty description)   		   | Empty  | 4 |
+| `caption`        | Link domain (empty for linked page domain)   		   | Empty  | 5 |
+
+
+
 
 *Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`.
 
@@ -78,15 +85,22 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"startup_list":"True",
 	"pokemon":{
 		"message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
-		"link": "<gmaps>"
+		"link": "<gmaps>",
+		"picture" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+		"description": "Address: <address>",
+            	"name": "<pkmn>"		
 	},
 	"pokestop":{
 		"message": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).",
+		"description": "Address: <address>",
 		"link": "<gmaps>"
 	},
 	"gym":{
 		"message":"A Team <old_team> gym has fallen! It is now controlled by <new_team>.",
-		"link": "<gmaps>"
+		"link": "<gmaps>",
+            	"name": "<new_team>",
+		"description": "Address: <address>",
+		"picture": "False",
 	}
 }
 ```
