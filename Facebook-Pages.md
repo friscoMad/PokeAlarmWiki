@@ -60,23 +60,46 @@ These optional parameters, `startup_message`, and `startup_list`, are entered at
 | `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
-Check Image column to see where eberything appears in the final publication.
+Check Image column to see where everything appears in the final publication.
 
 ![](images/Facebook.png)  
 
+`pokemon` default values:
+
 | Parameters       | Description                                       | Default                                       | Image|
 | -----------------|---------------------------------------------------|-----------------------------------------------|----|
-| `message`        | Message to post as status message                 | `A wild <pkmn> has appeared! Available until <24h_time> (<time_left>).`                                      | 1 |
+| `message`        | Message to post as status message                 | `A wild <pkmn> has appeared!`                                      | 1 |
 | `link`           | Link to be added to notification text   		   | `<gmaps>` | Link |
-| `picture`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png` <br/> `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png` <br/> `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png` | 2 |
-| `name`           | Link title (empty for linked page title)   		   | Empty  | 3 |
-| `description`    | Link description (empty for empty description)   		   | Empty  | 4 |
+| `image`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png` | 2 |
+| `name`           | Link title (False for linked page title)   		   | `<pkmn>`  | 3 |
+| `description`    | Link description (False for empty description)   		   | `Available until <24h_time> (<time_left>)`  | 4 |
 | `caption`        | Link domain (empty for linked page domain)   		   | Empty  | 5 |
 
 
+`pokestop` default values:
+
+| Parameters       | Description                                       | Default                                       | Image|
+| -----------------|---------------------------------------------------|-----------------------------------------------|----|
+| `message`        | Message to post as status message                 | `Someone has placed a lure on a Pokestop!`                                      | 1 |
+| `link`           | Link to be added to notification text   		   | `<gmaps>` | Link |
+| `image`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png` | 2 |
+| `name`           | Link title (False for linked page title)   		   | `Lured Pokestop`  | 3 |
+| `description`    | Link description (False for empty description)   		   | `Lure will expire at <24h_time> (<time_left>)`  | 4 |
+| `caption`        | Link domain (empty for linked page domain)   		   | Empty  | 5 |
 
 
-*Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`.
+`gym` default values:
+
+| Parameters       | Description                                       | Default                                       | Image|
+| -----------------|---------------------------------------------------|-----------------------------------------------|----|
+| `message`        | Message to post as status message                 | `A Team <old_team> gym has fallen!`                                      | 1 |
+| `link`           | Link to be added to notification text   		   | `<gmaps>` | Link |
+| `image`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png` | 2 |
+| `name`           | Link title (False for linked page title)   		   | `<old_team> gym fallen`  | 3 |
+| `description`    | Link description (False for empty description)   		   | `It is now controlled by <new_team>`  | 4 |
+| `caption`        | Link domain (empty for linked page domain)   		   | Empty  | 5 |
+
+
 
 ## Example: Alarm Configuration Using Optional Parameters
 ```json
@@ -89,21 +112,22 @@ Check Image column to see where eberything appears in the final publication.
 	"pokemon":{
 		"message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
 		"link": "<gmaps>",
-		"picture" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+		"image" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
 		"description": "Address: <address>",
             	"name": "<pkmn>"		
 	},
 	"pokestop":{
 		"message": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).",
 		"description": "Address: <address>",
-		"link": "<gmaps>"
+		"link": "<gmaps>",
+		"name": "False"
 	},
 	"gym":{
 		"message":"A Team <old_team> gym has fallen! It is now controlled by <new_team>.",
 		"link": "<gmaps>",
             	"name": "<new_team>",
 		"description": "Address: <address>",
-		"picture": "False",
+		"image": "False",
 	}
 }
 ```
