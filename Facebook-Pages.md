@@ -64,40 +64,54 @@ Check Image column to see where everything appears in the final publication.
 
 ![](images/Facebook.png)  
 
+| Parameters       | Description                                       | Image|
+| -----------------|---------------------------------------------------|----|
+| `message`        | Message to post as status message                 | 1 |
+| `link`           | Link to be added to notification text   	       | Link |
+| `image`          | Url of the image to show as a preview (empty for linked page preview) | 2 |
+| `name`           | Link title (empty for linked page title)   		   | 3 |
+| `description`    | Link description (empty for blank description)   		   | 4 |
+| `caption`        | Link domain (empty for linked page domain)   		   | 5 |
+
+When it says `"empty for X"` it means that you can disable the default PokeAlarm value setting that parameter to `""` in your `alarms.js` file. In that case Facebook will use the link information to fill that field in the publication.
+
+For example if you have `link` as a google maps link and you disable the `image` parameter setting it to `""`, it will be a minimap image of that coordinates.
+
+
 `pokemon` default values:
 
-| Parameters       | Description                                       | Default                                       | Image|
-| -----------------|---------------------------------------------------|-----------------------------------------------|----|
-| `message`        | Message to post as status message                 | `A wild <pkmn> has appeared!`                                      | 1 |
-| `link`           | Link to be added to notification text   		   | `<gmaps>` | Link |
-| `image`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png` | 2 |
-| `name`           | Link title (empty for linked page title)   		   | `<pkmn>`  | 3 |
-| `description`    | Link description (empty for blank description)   		   | `Available until <24h_time> (<time_left>)`  | 4 |
-| `caption`        | Link domain (empty for linked page domain)   		   | Empty  | 5 |
+| Parameters       | Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        |  `A wild <pkmn> has appeared!` |
+| `link`           | `<gmaps>` |
+| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png` |
+| `name`           | `<pkmn>`  |
+| `description`    | `Available until <24h_time> (<time_left>)`  |
+| `caption`        |  None  |
 
 
 `pokestop` default values:
 
-| Parameters       | Description                                       | Default                                       | Image|
-| -----------------|---------------------------------------------------|-----------------------------------------------|----|
-| `message`        | Message to post as status message                 | `Someone has placed a lure on a Pokestop!`                                      | 1 |
-| `link`           | Link to be added to notification text   		   | `<gmaps>` | Link |
-| `image`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png` | 2 |
-| `name`           | Link title (empty for linked page title)   		   | `Lured Pokestop`  | 3 |
-| `description`    | Link description (empty for blank description)   		   | `Lure will expire at <24h_time> (<time_left>)`  | 4 |
-| `caption`        | Link domain (empty for linked page domain)   		   | Empty  | 5 |
+| Parameters       |  Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        |  `Someone has placed a lure on a Pokestop!`                                      |
+| `link`           | `<gmaps>` |
+| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png` |
+| `name`           | `Lured Pokestop`  |
+| `description`    | `Lure will expire at <24h_time> (<time_left>)`  |
+| `caption`        | None  |
 
 
 `gym` default values:
 
-| Parameters       | Description                                       | Default                                       | Image|
-| -----------------|---------------------------------------------------|-----------------------------------------------|----|
-| `message`        | Message to post as status message                 | `A Team <old_team> gym has fallen!`                                      | 1 |
-| `link`           | Link to be added to notification text   		   | `<gmaps>` | Link |
-| `image`        | Url of the image to show as a preview (False to show map preview)   | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png` | 2 |
-| `name`           | Link title (empty for linked page title)   		   | `<old_team> gym fallen`  | 3 |
-| `description`    | Link description (empty for blank description)   		   | `It is now controlled by <new_team>`  | 4 |
-| `caption`        | Link domain (empty for linked page domain)   		   | Empty  | 5 |
+| Parameters       |  Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        | `A Team <old_team> gym has fallen!`                                      |
+| `link`           |  `<gmaps>` |
+| `image`          |  `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png` |
+| `name`           |  `<old_team> gym fallen`  |
+| `description`    | `It is now controlled by <new_team>`  |
+| `caption`        |  None  |
 
 
 
